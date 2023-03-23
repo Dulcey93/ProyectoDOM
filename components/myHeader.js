@@ -10,10 +10,6 @@ export default {
       href: "#",
     },
     {
-      name: "Buzz Bees",
-      href: "#",
-    },
-    {
       name: "Tools of Trade",
       href: "#",
     },

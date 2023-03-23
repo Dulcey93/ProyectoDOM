@@ -120,13 +120,6 @@ h1, h2, h3, h4, h5, h6 {
   background-position: center;
 }
 
-.responsiveImg{
-  width: 250px;
-  height: 250px;
-  object-fit: fill;
-  max-width: 100%;
-}
-
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
   * {
