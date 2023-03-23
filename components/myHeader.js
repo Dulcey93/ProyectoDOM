@@ -48,7 +48,7 @@ export default {
     {
       name: "Profit",
       href: "#",
-    },
+    }
   ],
   listTitle(){
     document.querySelector("#title").insertAdjacentHTML("beforeend", `

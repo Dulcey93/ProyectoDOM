@@ -124,4 +124,27 @@ h1, h2, h3, h4, h5, h6 {
   width: 250px;
   height: 250px;
   object-fit: fill;
+  max-width: 100%;
 }
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #f9f06b #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 22px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #f9f06b;
+    border-radius: 0px;
+    border: 0px solid #ffffff;
+  }

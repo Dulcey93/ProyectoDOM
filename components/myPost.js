@@ -1,15 +1,70 @@
 export default {
   post: [
     {
-        article: "FOR NEWBEES",
-        title: "Featured post",
-        date: "Nov 12",
-        paragraph: `This is a wider card with supportilkasnfsalkdnaskdnalkdsana`,
-        image:"../img/beeicon.png",
-        btn:{
-            name: "Continue...",
-            href: "#"
-        }
+      article: "FOR NEWBEES",
+      title: "Featured post",
+      date: "Nov 12",
+      paragraph: `This is a wider card with supportilkasnfsalkdnaskdnalkdsana`,
+      image: "../img/beeicon.png",
+      btn: {
+        name: "Continue...",
+        href: "#",
+      },
+    },
+    {
+      article: "FOR NEWBEES",
+      title: "Featured post",
+      date: "Nov 12",
+      paragraph: `This is a wider card with supportilkasnfsalkdnaskdnalkdsana`,
+      image: "../img/beeicon.png",
+      btn: {
+        name: "Continue...",
+        href: "#",
+      },
+    },
+    {
+      article: "FOR NEWBEES",
+      title: "Featured post",
+      date: "Nov 12",
+      paragraph: `This is a wider card with supportilkasnfsalkdnaskdnalkdsana`,
+      image: "../img/beeicon.png",
+      btn: {
+        name: "Continue...",
+        href: "#",
+      },
+    },
+    {
+      article: "FOR NEWBEES",
+      title: "Featured post",
+      date: "Nov 12",
+      paragraph: `This is a wider card with supportilkasnfsalkdnaskdnalkdsana`,
+      image: "../img/beeicon.png",
+      btn: {
+        name: "Continue...",
+        href: "#",
+      },
+    },
+    {
+      article: "FOR NEWBEES",
+      title: "Featured post",
+      date: "Nov 12",
+      paragraph: `This is a wider card with supportilkasnfsalkdnaskdnalkdsana`,
+      image: "../img/beeicon.png",
+      btn: {
+        name: "Continue...",
+        href: "#",
+      },
+    },
+    {
+      article: "FOR NEWBEES",
+      title: "Featured post",
+      date: "Nov 12",
+      paragraph: `This is a wider card with supportilkasnfsalkdnaskdnalkdsana`,
+      image: "../img/beeicon.png",
+      btn: {
+        name: "Continue...",
+        href: "#",
+      },
     }
   ],
   showPost() {
@@ -33,5 +88,5 @@ export default {
         `
       );
     });
-  },
+  }
 };
