@@ -118,7 +118,7 @@ export default {
     },
     cards(val) {
         return `
-    <div class="p-4 mb-3 bg-light rounded">
+    <div class="m-4 p-2 mb-3 bg-light rounded">
         <h4 class="fst-italic">${val.title}</h4>
         <p class="mb-0">${val.paragraph}</p>
     </div>

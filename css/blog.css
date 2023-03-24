@@ -141,3 +141,58 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 0px;
     border: 0px solid #ffffff;
   }
+
+  /* ===== Background ===== */
+  /* Bees Background */
+  .text-container {
+    background-color: #E6E6FA;
+  }
+  .topics{
+    background-color: #ECEFF1;
+  }
+  body {
+    background-image: url('../img/background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  #bees {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: move 20s ease-in-out infinite;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+  }
+  
+  @keyframes move {
+    0% { 
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    25% {
+      top: 5%;
+      left: 5%;
+      transform: translate(0, 0);
+    }
+    50% {
+      top: 90%;
+      left: 90%;
+      transform: translate(-50%, -50%);
+    }
+    75% {
+      top: 60%;
+      left: 40%;
+      transform: translate(0, 0);
+    }
+    100% {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
