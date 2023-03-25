@@ -14,7 +14,7 @@ export default {
     {
       article: "FOR NEWBEES",
       title: "Featured post",
-      date: "Nov 12",
+      date: "Nov 13",
       paragraph: `This is a wider card with supportilkasnfsalkdnaskdnalkdsana`,
       image: "../img/beeicon.png",
       btn: {
@@ -25,7 +25,7 @@ export default {
     {
       article: "FOR NEWBEES",
       title: "Featured post",
-      date: "Nov 12",
+      date: "Nov 14",
       paragraph: `This is a wider card with supportilkasnfsalkdnaskdnalkdsana`,
       image: "../img/beeicon.png",
       btn: {
@@ -36,7 +36,7 @@ export default {
     {
       article: "FOR NEWBEES",
       title: "Featured post",
-      date: "Nov 12",
+      date: "Nov 15",
       paragraph: `This is a wider card with supportilkasnfsalkdnaskdnalkdsana`,
       image: "../img/beeicon.png",
       btn: {
@@ -47,7 +47,7 @@ export default {
     {
       article: "FOR NEWBEES",
       title: "Featured post",
-      date: "Nov 12",
+      date: "Nov 16",
       paragraph: `This is a wider card with supportilkasnfsalkdnaskdnalkdsana`,
       image: "../img/beeicon.png",
       btn: {
@@ -58,7 +58,7 @@ export default {
     {
       article: "FOR NEWBEES",
       title: "Featured post",
-      date: "Nov 12",
+      date: "Nov 17",
       paragraph: `This is a wider card with supportilkasnfsalkdnaskdnalkdsana`,
       image: "../img/beeicon.png",
       btn: {

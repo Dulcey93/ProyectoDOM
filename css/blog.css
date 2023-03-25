@@ -124,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
   /* Firefox */
   * {
     scrollbar-width: auto;
-    scrollbar-color: #f9f06b #ffffff;
+    scrollbar-color: #FFF9C4 #ffffff;
   }
 
   /* Chrome, Edge, and Safari */
@@ -137,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: #f9f06b;
+    background-color: #FFF9C4;
     border-radius: 0px;
     border: 0px solid #ffffff;
   }
@@ -145,10 +145,10 @@ h1, h2, h3, h4, h5, h6 {
   /* ===== Background ===== */
   /* Bees Background */
   .text-container {
-    background-color: #E6E6FA;
+    background-color: #F9C5D1;
   }
   .topics{
-    background-color: #ECEFF1;
+    background-color: #B2DFDB;
   }
   body {
     background-image: url('../img/background.png');
