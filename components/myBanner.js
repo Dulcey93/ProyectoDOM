@@ -1,10 +1,10 @@
 export default {
     title: "Beekeeping Tips and Tricks",
     paragraph: "Learn everything you need to know about beekeeping, from hive management to honey harvesting, with our expert tips and tricks",
-    image: "../img/beekeeping.png",
+    image: "./img/beekeeping.png",
     btn: {
         name:"Continue reading...",
-        href: "../components/myAbout"
+        href: "#"
     },
     showImage(){
         document.querySelector(".imgStyle").style.backgroundImage = `url(${this.image})`;
