@@ -72,7 +72,7 @@ export default {
                 },
                 {
                     name: "HTML",
-                    something: "should use",
+                    something: " should use",
                     code: "abbr",
                     etiqueta: "abbr",
                 },
@@ -85,7 +85,7 @@ export default {
                 {
                     name: "Deleted",
                     something: ", use",
-                    code: "strong",
+                    code: "del",
                     etiqueta: "del",
                 },
                 {
@@ -126,7 +126,7 @@ export default {
             exact same string of text.`,
             p2: {
                 name: "Longer quote goes here, maybe with some",
-                strong: "emphasized text",
+                strong: " emphasized text",
                 after: " in the middle of it.",
             },
             p3: `This is some additional paragraph placeholder content. It has been
@@ -157,9 +157,9 @@ export default {
                     td3: `9`,
                 },
                 {
-                    td1: "Totals",
-                    td2: `21`,
-                    td3: `23`,
+                    tf1: "Totals",
+                    tf2: `21`,
+                    tf3: `23`,
                 },
             ],
             p4: `This is some additional paragraph placeholder content. It's a
@@ -201,13 +201,13 @@ export default {
     showBlog() {
         const data = this.article.map((val, id) => {
             switch (true) {
-                case val.supertitle:
+                case val.supertitle ? true : false:
                     return this.first(val);
-                case val.deftable:
+                case val.deftable ? true : false:
                     return this.second(val);
-                case val.feature:
+                case val.feature ? true : false:
                     return this.third(val);
-                case val.nav:
+                case val.older ? true : false:
                     return this.fourth(val);
                 default:
                     console.log("Doesn't exist");
@@ -289,32 +289,49 @@ export default {
           <p>${val.p4}</p>
           <table class="table">
             <thead>
-              <tr>
-                <th>${val.deftable.th1}</th>
-                <th>${val.deftable.th2}</th>
-                <th>${val.deftable.th3}</th>
-              </tr>
-            </thead>
-            <tbody>
               ${val.deftable
                 .map(
                     (val, id) =>
                         `
+                ${val.th1 ? `
+                <tr>
+                    <th>${val.th1}</th>
+                    <th>${val.th2}</th>
+                    <th>${val.th3}</th>
+                </tr>`: ""}
+                `
+                )
+                .join("")}
+            </thead>
+            <tbody>
+            ${val.deftable
+                .map(
+                    (val, id) =>
+                        `
+                ${val.td1 ? `
                 <tr>
                     <td>${val.td1}</td>
                     <td>${val.td2}</td>
                     <td>${val.td3}</td>
-                </tr>
+                </tr>`: ""}
                 `
                 )
                 .join("")}
             </tbody>
             <tfoot>
-              <tr>
-                <td>${val.deftable.td1}</td>
-                <td>${val.deftable.td2}</td>
-                <td>${val.deftable.td3}</td>
-              </tr>
+            ${val.deftable
+                .map(
+                    (val, id) =>
+                        `
+                ${val.tf1 ? `
+                <tr>
+                    <td>${val.tf1}</td>
+                    <td>${val.tf2}</td>
+                    <td>${val.tf3}</td>
+                </tr>`: ""}
+                `
+                )
+                .join("")}
             </tfoot>
           </table>
           <p>${val.p5}</p>
@@ -336,9 +353,9 @@ export default {
     fourth(val) {
         return `
     <nav class="blog-pagination" aria-label="Pagination">
-          <a class="btn btn-outline-primary" href="${val.href1}">${val.older}</a>
-          <a class="btn btn-outline-secondary disabled" href="${val.href2}" tabindex="-1" aria-disabled="true">${val.newer}</a>
+        <a class="btn btn-outline-primary" href="${val.href1}">${val.older}</a>
+        <a class="btn btn-outline-secondary disabled" href="${val.href2}" tabindex="-1" aria-disabled="true">${val.newer}</a>
     </nav>
-       `;
+    `;
     },
 };
