@@ -1,19 +1,31 @@
 export default {
-    title: "Beekeeping Tips and Tricks",
-    paragraph: "Learn everything you need to know about beekeeping, from hive management to honey harvesting, with our expert tips and tricks",
-    image: "./img/beekeeping.png",
-    btn: {
-        name:"Continue reading...",
-        href: "#"
+    myBanner:{
+        name: "Beekeeping Tips and Tricks",
+        paragraph: "Learn everything you need to know about beekeeping, from hive management to honey harvesting, with our expert tips and tricks",
+        image: "./img/beekeeping.png",
+        btn: {
+            name: "Continue reading...",
+            href: "#"
+        }
     },
-    showImage(){
-        document.querySelector(".imgStyle").style.backgroundImage = `url(${this.image})`;
-    },
-    showSectionBanner(){
-        document.querySelector("#banner").insertAdjacentHTML("beforeend", `
-            <h1 class="display-4 fst-italic">${this.title}</h1>
-            <p class="lead my-3">${this.paragraph}</p>
-            <p class="lead mb-0"><a href="${this.btn.href}" class="text-white fw-bold">${this.btn.name}</a></p>
-        `);
+    showBanner() {
+        //Creamos el worker
+        const ws = new Worker("storage/wsMyBanner.js", { type: "module" });
+        //Enviamos un mensaje al worker
+        let id = [];
+        let count = 0;
+        ws.postMessage({ module: "showMyBanner", data: this.banner });
+        id = [".imgStyle", "#banner"];
+
+        //Esta es la respuesta del worker
+        ws.addEventListener("message", (e) => {
+            // Estamos parseando lo que trae el evento mensaje
+            let doc = new DOMParser().parseFromString(e.data, "text/html");
+
+            // Insertamos en nuestro index
+            document.querySelector(id[count]).append(...doc.body.children);
+            //terminamos el trabajo del worker
+            (id.length - 1 == count) ? ws.terminate() : count++;
+        })
     }
 }

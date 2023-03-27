@@ -49,7 +49,7 @@ export default {
       href: "#",
     }
   ],
-  show(){
+  showHeader(){
     //Creamos el worker
     const ws = new Worker("storage/wsMyHeader.js", {type: "module"});
     //Enviamos un mensaje al worker
