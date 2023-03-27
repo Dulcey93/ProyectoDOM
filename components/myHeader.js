@@ -1,5 +1,8 @@
 export default {
-  title: {name: "Beekeeping"},
+  title: {
+    name: "Beekeeping",
+    href: "#"
+  },
   company: [
     {
       name: "About",
@@ -46,16 +49,26 @@ export default {
       href: "#",
     }
   ],
-  listTitle(){
-    document.querySelector("#title").insertAdjacentHTML("beforeend", `
-        <a class="blog-header-logo text-dark" href="${this.title}">${this.title.name}</a>
-    `);
-  },
-  displayCompany() {
-    let plantilla = "";
-    this.company.forEach((val, id) => {
-      plantilla+=`<a class="p-2 link-secondary" href="${val.href}">${val.name}</a>`
-    });
-    document.querySelector("#company").insertAdjacentHTML("beforeend", plantilla);
+  show(){
+    //Creamos el worker
+    const ws = new Worker("storage/wsMyHeader.js", {type: "module"});
+    //Enviamos un mensaje al worker
+    let id = [];
+    let count = 0;
+    // id.push("#title");
+    ws.postMessage({module: "listTitle", data: this.title});
+    // id.push("#company");
+    ws.postMessage({module: "displayCompany", data: this.company});
+    id = ["#title", "#company"];
+
+    //Esta es la respuesta del worker
+    ws.addEventListener("message", (e)=>{
+      // Estamos parseando lo que trae el evento mensaje
+      let doc = new DOMParser().parseFromString(e.data, "text/html");
+      // Insertamos en nuestro index, en el selector #company
+      document.querySelector(id[count]).append(...doc.body.children);
+      //terminamos el trabajo del worker
+      (id.length-1==count)? ws.terminate(): count++;
+    })
   }
 }

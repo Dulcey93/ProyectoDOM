@@ -6,8 +6,7 @@ import myBlog from "./components/myBlog.js";
 
 const bees = document.createElement('img');
 
-myHeader.listTitle();
-myHeader.displayCompany();
+myHeader.show();
 myBanner.showImage();
 myBanner.showSectionBanner();
 myPost.showPost();
