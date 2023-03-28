@@ -1,13 +1,8 @@
+import config from "../storage/config.js";
 export default {
-    myBanner:{
-        name: "Beekeeping Tips and Tricks",
-        paragraph: "Learn everything you need to know about beekeeping, from hive management to honey harvesting, with our expert tips and tricks",
-        btn: {
-            name: "Continue reading...",
-            href: "#"
-        }
-    },
     showBanner() {
+        config.dataMyBanner();
+        Object.assign(this, JSON.parse(localStorage.getItem("myBanner")));
         //Creamos el worker
         const ws = new Worker("storage/wsMyBanner.js", { type: "module" });
         //Enviamos un mensaje al worker

@@ -1,73 +1,8 @@
+import config from "../storage/config.js";
 export default {
-  post: [
-    {
-      article: "FOR NEWBEES",
-      title: "Featured post",
-      date: "Nov 12",
-      paragraph: `This is a card in a card-group with styles and calls in Js with workers`,
-      image: "./img/beeicon.png",
-      btn: {
-        name: "Continue...",
-        href: "#",
-      },
-    },
-    {
-      article: "FOR NEWBEES",
-      title: "Featured post",
-      date: "Nov 13",
-      paragraph: `This is a card in a card-group with styles and calls in Js with workers`,
-      image: "./img/beeicon.png",
-      btn: {
-        name: "Continue...",
-        href: "#",
-      },
-    },
-    {
-      article: "FOR NEWBEES",
-      title: "Featured post",
-      date: "Nov 14",
-      paragraph: `This is a card in a card-group with styles and calls in Js with workers`,
-      image: "./img/beeicon.png",
-      btn: {
-        name: "Continue...",
-        href: "#",
-      },
-    },
-    {
-      article: "FOR NEWBEES",
-      title: "Featured post",
-      date: "Nov 15",
-      paragraph: `This is a card in a card-group with styles and calls in Js with workers`,
-      image: "./img/beeicon.png",
-      btn: {
-        name: "Continue...",
-        href: "#",
-      },
-    },
-    {
-      article: "FOR NEWBEES",
-      title: "Featured post",
-      date: "Nov 16",
-      paragraph: `This is a card in a card-group with styles and calls in Js with workers`,
-      image: "./img/beeicon.png",
-      btn: {
-        name: "Continue...",
-        href: "#",
-      },
-    },
-    {
-      article: "FOR NEWBEES",
-      title: "Featured post",
-      date: "Nov 17",
-      paragraph: `This is a card in a card-group with styles and calls in Js with workers`,
-      image: "./img/beeicon.png",
-      btn: {
-        name: "Continue...",
-        href: "#",
-      },
-    }
-  ],
   showPost() {
+    config.dataMyPost();
+    Object.assign(this, JSON.parse(localStorage.getItem("myPost")));
     //Creamos el worker
     const ws = new Worker("storage/wsMyPost.js", {type: "module"});
     //Enviamos un mensaje al worker
