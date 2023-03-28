@@ -8,7 +8,6 @@ const bees = document.createElement('img');
 
 myHeader.showHeader();
 myBanner.showBanner();
-myBanner.showSectionBanner();
 myPost.showPost();
 myAside.showAside();
 myBlog.showBlog();

@@ -116,6 +116,7 @@ h1, h2, h3, h4, h5, h6 {
 /* MyCSS */
 
 .imgStyle{
+  background-image: url("../img/beekeeping.png");
   background-size: cover;
   background-position: center;
 }
@@ -163,7 +164,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 50%;
     transform: translate(-50%, -50%);
     animation: move 20s ease-in-out infinite;
-    z-index: 1;
+    z-index: 10;
     width: 50px;
     height: 50px;
   }

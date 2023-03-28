@@ -109,34 +109,19 @@ export default {
 
     ],
     showAside() {
-        const data = this.nav.map((val, id) => {
-            return val.link ? this.list(val) : this.cards(val);
-        });
-        document
-            .querySelector("#nav")
-            .insertAdjacentHTML("beforeend", data.join(""));
-    },
-    cards(val) {
-        return `
-    <div class="m-4 p-2 mb-3 bg-light rounded">
-        <h4 class="fst-italic">${val.title}</h4>
-        <p class="mb-0">${val.paragraph}</p>
-    </div>
-    `;
-    },
-    list(val) {
-        return `
-        <div class="p-4">
-            <h4 class="fst-italic">${val.title}</h4>
-            <ol class="list-unstyled mb-0">
-                ${val.link
-                .map(
-                    (val, id) =>
-                        `<li><a href="${val.href}">${val.name}</a></li>`
-                )
-                .join("")}
-            </ol>
-        </div>
-    `;
-    },
+        //Creamos el worker
+        const ws = new Worker("storage/wsMyAside.js", { type: "module" });
+        //Enviamos un mensaje al worker
+        ws.postMessage({ module: "displayAside", data: this.nav });
+
+        //Esta es la respuesta del worker
+        ws.addEventListener("message", (e) => {
+            // Estamos parseando lo que trae el evento mensaje
+            let doc = new DOMParser().parseFromString(e.data, "text/html");
+            // Insertamos en nuestro index, en el selector #company
+            document.querySelector("#nav").append(...doc.body.children);
+            //terminamos el trabajo del worker
+            ws.terminate();
+        })
+    }
 };
