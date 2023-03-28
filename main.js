@@ -13,6 +13,9 @@ myAside.showAside();
 myBlog.showBlog();
 
 
+
+
+
 /* Bees animation*/
 bees.src = './img/bee.gif';
 bees.id = 'bees';

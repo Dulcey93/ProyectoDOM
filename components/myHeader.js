@@ -1,55 +1,9 @@
+import config from "../storage/config.js";
 export default {
-  title: {
-    name: "Beekeeping",
-    href: "#"
-  },
-  company: [
-    {
-      name: "About",
-      href: "#",
-    },
-    {
-      name: "Bee's life",
-      href: "#",
-    },
-    {
-      name: "Tools of Trade",
-      href: "#",
-    },
-    {
-      name: "Hive Management",
-      href: "#",
-    },
-    {
-      name: "Honey Harvesting",
-      href: "#",
-    },
-    {
-      name: "Bee Products",
-      href: "#",
-    },
-    {
-      name: "Beekeeping Challenges",
-      href: "#",
-    },
-    {
-      name: "Beekeeping planet",
-      href: "#",
-    },
-    {
-      name: "Law's Bee",
-      href: "#",
-    },
-    {
-      name: "Community",
-      href: "#",
-    },
-    {
-      name: "Profit",
-      href: "#",
-    }
-  ],
   showHeader(){
+    //Le decimos que el this va a contener lo que haya en el localStorage en la key "myHeader"
+    config.dataMyHeader();
+    Object.assign(this, JSON.parse(localStorage.getItem("myHeader")));
     //Creamos el worker
     const ws = new Worker("storage/wsMyHeader.js", {type: "module"});
     //Enviamos un mensaje al worker
