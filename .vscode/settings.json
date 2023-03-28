@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "Add code"
+        "Add code",
+        "localStorage"
     ]
 }
